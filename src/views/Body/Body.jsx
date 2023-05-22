@@ -1,24 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from 'react';
-import { getBtcPrice } from '../../services/index';
+import React from 'react';
+import Container from './Container/Container';
 
 const Body = () => {
-  const [btcPrice, setBtcPrice] = useState(null);
-
-  useEffect(() => {
-    getBtcPrice()
-      .then((price) => {
-        setBtcPrice(price);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
 
   return (
     <div>
-      <h1>Criptomonedas</h1>
-      <p>Precio de Bitcoin: {btcPrice} $</p>
+      <h1 className='text-center text-2xl font-bold m-4'>Criptomonedas</h1>
+      <div className='text-center'>
+        <Container />
+      </div>
     </div>
   );
 };
