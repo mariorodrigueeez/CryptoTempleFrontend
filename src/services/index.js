@@ -60,32 +60,47 @@ export function getEthPrice() {
 
 export function getall() {
   const url = 'http://127.0.0.1:5000/api/mapeo';
+  return fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((json) => {
+      const data = json.data;
 
-  if (!getall.promise) {
-    getall.promise = new Promise((resolve, reject) => {
-      fetch(url, {
-        headers: {
-        },
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Request failed');
-          }
-          return response.json();
-        })
-        .then(data => {
-          const mapeo = data.data;
-          console.log(mapeo);
-          const names = mapeo.map(obj => obj.name);
-          console.log(names);
-          resolve(mapeo);
-        })
-        .catch(error => {
-          console.error(error);
-          reject(error);
-        });
-    });
-  }
-
-  return getall.promise;
+      return getDatos(data);
+    })
+    .catch((error) => console.log('error', error));
 }
+export async function getallData() {
+  const url = 'http://127.0.0.1:5000/api/all';
+  return await fetch(url)
+    .then((response) => {
+      return response.json();
+    })
+    .then((json) => {
+      const datos = json.data;
+      console.log(datos);
+
+      return getDatos(datos);
+    })
+    .catch((error) => console.log('error', error));
+}
+
+export function getDatos(json) {
+  const datosArray = json.map((datosBueno) => {
+    const nombre = datosBueno.name;
+    const precio = datosBueno.quote.USD.price;
+    return { nombre, precio };
+  })
+  const datosArray2 = json.map((datosBueno) => datosBueno.name);
+
+
+
+  console.log(datosArray);
+  console.log(datosArray2);
+  return datosArray;
+}
+
