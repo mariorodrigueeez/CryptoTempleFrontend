@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+::-webkit-scrollbar {
+  height: 0.4rem;
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #5271ff;
+  border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(250 204 21);
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}

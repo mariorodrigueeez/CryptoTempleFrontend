@@ -9,6 +9,7 @@ import Root from './routes/root';
 import ErrorPage from './ErrorPage';
 import Body from './views/Body/Body'
 import './index.css';
+import { Container } from 'postcss';
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <Body />,
+      },
+      {
+        path: '/criptomonedas',
+        element: <Container />,
       },
     ],
   },

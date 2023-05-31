@@ -7,7 +7,6 @@ export const Container = () => {
 
   return (
     <div>
-
       <Names />
     </div>
   );
