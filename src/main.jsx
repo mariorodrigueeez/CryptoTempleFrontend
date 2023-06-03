@@ -11,7 +11,7 @@ import Body from './views/Body/Body'
 import './index.css';
 import { Container } from 'postcss';
 import Inicio from './views/Body/Components/Inicio';
-import { News } from './views/Body/Components/News';
+import { News } from './views/Body/Components/Noticias/News';
 
 
 const router = createBrowserRouter([
