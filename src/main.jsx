@@ -10,6 +10,8 @@ import ErrorPage from './ErrorPage';
 import Body from './views/Body/Body'
 import './index.css';
 import { Container } from 'postcss';
+import Inicio from './views/Body/Components/Inicio';
+import { News } from './views/Body/Components/News';
 
 
 const router = createBrowserRouter([
@@ -20,11 +22,19 @@ const router = createBrowserRouter([
     children: [
       {
         path: '',
+        element: <Inicio />,
+      },
+      {
+        path: '/home',
         element: <Body />,
       },
       {
         path: '/criptomonedas',
         element: <Container />,
+      },
+      {
+        path: '/news',
+        element: <News />,
       },
     ],
   },

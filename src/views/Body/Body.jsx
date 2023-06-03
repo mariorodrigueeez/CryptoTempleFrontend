@@ -4,6 +4,10 @@ import btc from "../../assets/btc.png"
 import eth from "../../assets/eth.png"
 import doge from "../../assets/doge.png"
 import logo from "../../assets/Logo.png"
+import separadorTop from "../../assets/separadorTop.png"
+import separadorBotton from "../../assets/separadorBot.png"
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -11,8 +15,14 @@ const Body = () => {
 
   return (
     <div>
+
       <h1 className='text-center text-2xl font-bold m-4'>Cripto Temple</h1>
-      <div className='grid grid-cols-3  m-4'>
+      <div className='w-full '>
+        <img src={separadorTop} alt="S" className='w-full h-auto' />
+      </div>
+
+
+      <div className='grid grid-cols-3 fondo-gris'>
         <div className=' text-center'>
           <p className='text-2xl p-8'>Sigue el precio de tus monedas favoritas</p>
           <div className='flex justify-center mt-3'>
@@ -31,10 +41,14 @@ const Body = () => {
         <div className='text-center'>
           <p className='text-2xl p-8'>Sigue las ultimas novedades del mundo Crypto!</p>
           <div className='flex justify-center mt-3'>
-            <button className='bg-blue-400 p-3 rounded-lg hover:bg-yellow-400 animate-pulse'>Noticias</button>
+            <Link to="/news">
+              <button className='bg-blue-400 p-3 rounded-lg hover:bg-yellow-400 animate-pulse'>Noticias</button>
+            </Link>
           </div>
         </div>
-
+      </div>
+      <div className='w-screen'>
+        <img src={separadorBotton} alt="S" className='w-full h-auto' />
       </div>
     </div>
   );

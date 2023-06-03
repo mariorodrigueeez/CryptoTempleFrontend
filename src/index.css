@@ -20,3 +20,11 @@
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+.separador1 {
+  background-image: url(assets/Separation.png);
+}
+
+.fondo-gris {
+  background-color: #F8F9FA;
+}
