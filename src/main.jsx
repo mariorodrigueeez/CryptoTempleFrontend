@@ -9,9 +9,9 @@ import Root from './routes/root';
 import ErrorPage from './ErrorPage';
 import Body from './views/Body/Body'
 import './index.css';
-import { Container } from 'postcss';
 import Inicio from './views/Body/Components/Inicio';
-import { News } from './views/Body/Components/Noticias/News';
+import News from './views/Body/Components/Noticias/News';
+import Names from './views/Body/Components/Names';
 
 
 const router = createBrowserRouter([
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/criptomonedas',
-        element: <Container />,
+        element: <Names />,
       },
       {
         path: '/news',

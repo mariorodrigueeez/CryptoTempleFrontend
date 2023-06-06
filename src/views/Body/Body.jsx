@@ -42,7 +42,7 @@ const Body = () => {
           <p className='text-2xl p-8'>Sigue las ultimas novedades del mundo Crypto!</p>
           <div className='flex justify-center mt-3'>
             <Link to="/news">
-              <button className='bg-blue-400 p-3 rounded-lg hover:bg-yellow-400 animate-pulse'>Noticias</button>
+              <button className='boton'>Noticias</button>
             </Link>
           </div>
         </div>

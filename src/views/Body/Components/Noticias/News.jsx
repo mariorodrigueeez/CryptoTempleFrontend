@@ -4,26 +4,32 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 import AccountMenu from './AccountMenu';
 
 export const News = () => {
+  // Estado para almacenar las cuentas de Twitter
   const [twitterAccounts, setTwitterAccounts] = useState([]);
 
+  // Cargar las cuentas almacenadas en el almacenamiento local al iniciar
   useEffect(() => {
     const savedAccounts = localStorage.getItem('twitterAccounts');
     if (savedAccounts) {
       setTwitterAccounts(JSON.parse(savedAccounts));
     }
+
   }, []);
 
+  // Guardar las cuentas en el almacenamiento local cuando cambian
   useEffect(() => {
     localStorage.setItem('twitterAccounts', JSON.stringify(twitterAccounts));
   }, [twitterAccounts]);
 
+  // Agregar una nueva cuenta a la lista
   const handleAddAccount = (newAccount) => {
     setTwitterAccounts([...twitterAccounts, { screenName: newAccount }]);
   };
+
+  // Borrar todas las cuentas de la lista
   const handleClearAccounts = () => {
     setTwitterAccounts([]);
   };
-
 
   return (
     <div>

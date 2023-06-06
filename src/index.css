@@ -29,3 +29,51 @@ body {
 .fondo-gris {
   background-color: #F8F9FA;
 }
+
+
+.boton {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transform: none;
+  background-color: #3B82F6;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 9999px;
+}
+
+.boton:hover {
+  transform: scale(1.1);
+  background-color: #2563EB;
+}
+
+.boton:hover,
+.boton:focus {
+  outline: none;
+}
+
+.boton:active {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.tabla {
+  height: 10%;
+  width: 80%;
+}
