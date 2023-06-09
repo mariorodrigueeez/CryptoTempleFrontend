@@ -94,7 +94,13 @@ export function getDatos(json) {
   const datosArray = json.map((datosBueno) => {
     const nombre = datosBueno.name;
     const precio = datosBueno.quote.USD.price;
-    return { nombre, precio };
+    const valor24h = datosBueno.quote.USD.percent_change_24h;
+    const valor7d = datosBueno.quote.USD.percent_change_7d;
+    const valor30d = datosBueno.quote.USD.percent_change_30d;
+    const id = datosBueno.id;
+    const rank = datosBueno.cmc_rank;
+    const volume24h = datosBueno.quote.USD.volume_24h
+    return { nombre, precio, valor24h, valor7d, valor30d, id, rank, volume24h };
   })
   const datosArray2 = json.map((datosBueno) => datosBueno.name);
 

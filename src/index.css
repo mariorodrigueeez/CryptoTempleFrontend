@@ -30,6 +30,10 @@ body {
   background-color: #F8F9FA;
 }
 
+.tabla {
+  height: 10%;
+  width: 80%;
+}
 
 .boton {
   transition-property: all;
@@ -41,9 +45,9 @@ body {
   font-weight: bold;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  border-radius: 9999px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 15px;
 }
 
 .boton:hover {
@@ -73,7 +77,94 @@ body {
   }
 }
 
-.tabla {
-  height: 10%;
-  width: 80%;
+
+.botonAlerta1 {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transform: none;
+  background-color: #3B82F6;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+
+.botonAlerta1:hover {
+  transform: scale(1.1);
+  background-color: #2563EB;
+}
+
+.botonAlerta1:hover,
+.botonAlerta1:focus {
+  outline: none;
+}
+
+.botonAlerta1:active {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.botonAlerta2 {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transform: none;
+  background-color: #fa1616;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+
+.botonAlerta2:hover {
+  transform: scale(1.1);
+  background-color: #cc0808;
+}
+
+.botonAlerta2:hover,
+.botonAlerta2:focus {
+  outline: none;
+}
+
+.botonAlerta2:active {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.botonPagination {
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  transform: none;
+  background-color: #3B82F6;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  border-radius: 15px;
+}
+
+.botonPagination:hover {
+  transform: scale(1.1);
+  background-color: #2563EB;
+}
+
+.botonPagination:hover,
+.botonPagination:focus {
+  outline: none;
+}
+
+.botonPagination:active {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
