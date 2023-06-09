@@ -12,6 +12,7 @@ import './index.css';
 import Inicio from './views/Body/Components/Inicio';
 import News from './views/Body/Components/Noticias/News';
 import Names from './views/Body/Components/Names';
+import { Login } from './views/Body/Components/Login/Login';
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: '/news',
         element: <News />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
       },
     ],
   },

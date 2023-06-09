@@ -7,6 +7,7 @@ import logo from "../../assets/Logo.png"
 import separadorTop from "../../assets/separadorTop.png"
 import separadorBotton from "../../assets/separadorBot.png"
 import { Link } from 'react-router-dom';
+import { Login } from './Components/Login/Login';
 
 
 
