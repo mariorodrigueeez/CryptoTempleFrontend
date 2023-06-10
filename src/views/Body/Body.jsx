@@ -1,5 +1,4 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
 import btc from "../../assets/btc.png"
 import eth from "../../assets/eth.png"
 import doge from "../../assets/doge.png"
@@ -7,13 +6,27 @@ import logo from "../../assets/Logo.png"
 import separadorTop from "../../assets/separadorTop.png"
 import separadorBotton from "../../assets/separadorBot.png"
 import { Link } from 'react-router-dom';
-import { Login } from './Components/Login/Login';
+import React, { useEffect, useState } from 'react';
+import { fetchNFTData } from '../../services/index';
 
 
 
 
 const Body = () => {
+  const [allNft, setAllNft] = useState([]);
 
+  useEffect(() => {
+    const slug = "cool-cats-nft";
+    console.log(slug);
+    // Replace with the desired collection slug
+    fetchNFTData(slug)
+      .then((data) => {
+        setAllNft(data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <div>
 

@@ -1,64 +1,4 @@
 
-export function getBtcPrice() {
-  const url = 'http://127.0.0.1:5000/api/btcprice';
-
-  if (!getBtcPrice.promise) {
-    getBtcPrice.promise = new Promise((resolve, reject) => {
-      fetch(url, {
-        headers: {
-        },
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Request failed');
-          }
-          return response.json();
-        })
-        .then(data => {
-          const btcPrice = data.data.BTC[0].quote.USD.price;
-          console.log(btcPrice);
-          resolve(btcPrice.toFixed(0));
-        })
-        .catch(error => {
-          console.error(error);
-          reject(error);
-        });
-    });
-  }
-
-  return getBtcPrice.promise;
-}
-
-export function getEthPrice() {
-  const url = 'http://127.0.0.1:5000/api/ethprice';
-
-  if (!getEthPrice.promise) {
-    getEthPrice.promise = new Promise((resolve, reject) => {
-      fetch(url, {
-        headers: {
-        },
-      })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Request failed');
-          }
-          return response.json();
-        })
-        .then(data => {
-          const ethPrice = data.data.ETH[0].quote.USD.price;
-          console.log(ethPrice);
-          resolve(ethPrice.toFixed(0));
-        })
-        .catch(error => {
-          console.error(error);
-          reject(error);
-        });
-    });
-  }
-
-  return getEthPrice.promise;
-}
-
 export function getall() {
   const url = 'http://127.0.0.1:5000/api/mapeo';
   return fetch(url)
@@ -111,3 +51,22 @@ export function getDatos(json) {
   return datosArray;
 }
 
+
+export function fetchNFTData(slug) {
+  const url = `http://localhost:5000/api/nft/${slug}`;
+
+  return fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      // Process the data as needed
+      console.log(slug);
+      console.log(data);
+      // Return or use the processed data
+      return data;
+    })
+    .catch(error => {
+      console.error(error);
+      // Handle the error appropriately
+      throw error;
+    });
+}
