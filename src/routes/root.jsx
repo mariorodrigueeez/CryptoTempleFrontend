@@ -8,7 +8,7 @@ export default function Root() {
   return (
     <div>
       <Navbar />
-      <div id="detail" className='mt-28'>
+      <div id="detail" className='md:mt-28 sm:mt-96'>
         <Outlet />
       </div>
     </div>

@@ -33,6 +33,8 @@ export async function getallData() {
 export function getDatos(json) {
   const datosArray = json.map((datosBueno) => {
     const nombre = datosBueno.name;
+    const circulating_supply = datosBueno.circulating_supply;
+    const max_supply = datosBueno.max_supply;
     const precio = datosBueno.quote.USD.price;
     const valor24h = datosBueno.quote.USD.percent_change_24h;
     const valor7d = datosBueno.quote.USD.percent_change_7d;
@@ -40,7 +42,9 @@ export function getDatos(json) {
     const id = datosBueno.id;
     const rank = datosBueno.cmc_rank;
     const volume24h = datosBueno.quote.USD.volume_24h
-    return { nombre, precio, valor24h, valor7d, valor30d, id, rank, volume24h };
+    const volume_change_24h = datosBueno.quote.USD.volume_change_24h
+
+    return { nombre, circulating_supply, precio, valor24h, valor7d, valor30d, id, rank, volume24h, volume_change_24h, max_supply };
   })
   const datosArray2 = json.map((datosBueno) => datosBueno.name);
 

@@ -38,13 +38,13 @@ export const News = () => {
       <AccountMenu
         handleAddAccount={handleAddAccount}
         handleClearAccounts={handleClearAccounts}
-        handleTimelineHeightChange={handleTimelineHeightChange} // Agrega la prop handleTimelineHeightChange al componente AccountMenu
+        handleTimelineHeightChange={handleTimelineHeightChange}
       />
-      <div className='grid grid-cols-4 gap-4'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {twitterAccounts.map((account, index) => (
           <div key={index} className='m-1'>
             <TwitterTimelineEmbed
-              key={timelineKey} // Utiliza la clave en el componente TwitterTimelineEmbed
+              key={timelineKey}
               sourceType="profile"
               screenName={account.screenName}
               options={{ height: timelineHeight }}
@@ -53,6 +53,7 @@ export const News = () => {
         ))}
       </div>
     </div>
+
   );
 };
 

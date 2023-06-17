@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         element: <Body />,
       },
       {
-        path: '/criptomonedas',
+        path: '/crypto',
         element: <Names />,
       },
       {

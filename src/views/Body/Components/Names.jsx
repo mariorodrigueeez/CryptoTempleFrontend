@@ -20,6 +20,7 @@ export const Names = () => {
   }, []);
 
   function formatVolume(volume) {
+    const thousand = 1000;
     const million = 1000000;
     const billion = 1000000000;
     const trillion = 1000000000000;
@@ -30,8 +31,29 @@ export const Names = () => {
       return `$${(volume / billion).toFixed(2)}B`;
     } else if (volume >= million) {
       return `$${(volume / million).toFixed(2)}M`;
+    } else if (volume >= thousand) {
+      return `$${(volume / thousand).toFixed(2)}K`;
     } else {
       return `$${volume}`;
+    }
+  }
+
+  function formatNum(num) {
+    const thousand = 1000;
+    const million = 1000000;
+    const billion = 1000000000;
+    const trillion = 1000000000000;
+
+    if (num >= trillion) {
+      return `${(num / trillion).toFixed(2)}T`;
+    } else if (num >= billion) {
+      return `${(num / billion).toFixed(2)}B`;
+    } else if (num >= million) {
+      return `${(num / million).toFixed(2)}M`;
+    } else if (num >= thousand) {
+      return `${(num / thousand).toFixed(2)}K`;
+    } else {
+      return `${num}`;
     }
   }
 
@@ -61,80 +83,112 @@ export const Names = () => {
     <div>
 
 
-      <div className='w-4/5 h-96 overflow-y-auto m-auto border rounded-lg mt-3'>
+      <div className='mx-7 h-tabla overflow-y-auto m-auto border rounded-lg mt-3'>
         <table className="table-auto min-w-full text-center">
           <thead className="top-0 sticky text-gray-700 uppercase bg-gray-100 border-b">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-4 py-3">
                 Rank
               </th>
-              <th scope="col" className="px-6 py-3">
-                Nombre
+              <th scope="col" className="py-3 bg-orange-400">
+                Name
               </th>
-              <th scope="col" className="px-6 py-3">
-                Precio
+              <th scope="col" className="px-4 py-3">
+                Price
               </th>
-              <th scope="col" className="px-6 py-3">
-                24h %
+              <th scope="col" className="px-4 py-3">
+                24h%
               </th>
-              <th scope="col" className="px-6 py-3">
-                7d %
+              <th scope="col" className="px-4 py-3">
+                7d%
               </th>
-              <th scope="col" className="px-6 py-3">
-                30d %
+              <th scope="col" className="px-4 py-3">
+                30d%
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-4 py-3">
                 Volume
+              </th>
+              <th scope="col" className="px-4 py-3">
+                V change
+              </th>
+              <th scope="col" className="px-4 py-3">
+                Circulating supply
+              </th>
+              <th scope="col" className="px-4 py-3">
+                Max supply
               </th>
             </tr>
           </thead>
           <tbody className=''>
             {currentCoins.map((coin) => (
               <tr key={coin.name} className="bg-white">
-                <th scope="row" className="px-6 py-4">
+                <th scope="row" className="px-4 py-4">
                   {coin.rank}
                 </th>
-                <th scope="row" className="px-6 py-4 flex items-center ">
-                  <div className='mr-10 '>
-                    <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${coin.id}.png`} className='h-8' alt="logo" />
-                  </div>
-                  <div className=' my-auto'>
-                    {coin.nombre}
+                <th scope="row" className=" py-4  bg-orange-200">
+                  <div className='flex'>
+                    <div className='my-auto bg-blue-400  w-8'>
+                      <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${coin.id}.png`} className='h-8 w-8' alt="logo" />
+                    </div>
+                    <div className=' my-auto hidden lg:block bg-green-400 '>
+                      {coin.nombre}
+                    </div>
                   </div>
                 </th>
-                <td className="px-6 py-4">
+                <td className="px-4 py-4">
                   {coin.precio > 0.01 ? ((coin.precio).toFixed(2)) : ((coin.precio).toFixed(8))}$
                 </td>
                 {(coin.valor24h < 0 ? (
-                  <td className="px-6 py-4 text-red-500">
+                  <td className="px-4 py-4 text-red-500">
                     {(coin.valor24h).toFixed(1)} %
                   </td>)
                   : (
-                    <td className="px-6 py-4 text-green-500">
+                    <td className="px-4 py-4 text-green-500">
                       {(coin.valor24h).toFixed(1)} %
                     </td>)
                 )}
                 {(coin.valor7d < 0 ? (
-                  <td className="px-6 py-4 text-red-500">
+                  <td className="px-4 py-4 text-red-500">
                     {(coin.valor7d).toFixed(1)} %
                   </td>)
                   : (
-                    <td className="px-6 py-4 text-green-500">
+                    <td className="px-4 py-4 text-green-500">
                       {(coin.valor7d).toFixed(1)} %
                     </td>)
                 )}
                 {(coin.valor30d < 0 ? (
-                  <td className="px-6 py-4 text-red-500">
+                  <td className="px-4 py-4 text-red-500">
                     {(coin.valor30d).toFixed(1)} %
                   </td>)
                   : (
-                    <td className="px-6 py-4 text-green-500">
+                    <td className="px-4 py-4 text-green-500">
                       {(coin.valor30d).toFixed(1)} %
                     </td>)
                 )}
-                <td className="px-6 py-4">
+                <td className="px-4 py-4">
                   {formatVolume(coin.volume24h)}
                 </td>
+                {(coin.volume_change_24h < 0 ? (
+                  <td className="px-4 py-4 text-red-500">
+                    {(coin.volume_change_24h).toFixed(0)} %
+                  </td>)
+                  : (
+                    <td className="px-4 py-4 text-green-500">
+                      {(coin.volume_change_24h).toFixed(0)} %
+                    </td>)
+                )}
+                <td className="px-4 py-4">
+                  {formatNum(coin.circulating_supply)}
+                </td>
+                {(coin.max_supply === null ? (
+                  <td className="px-4 py-4 ">
+                    -
+                  </td>)
+                  : (
+                    <td className="px-4 py-4">
+                      {formatNum(coin.max_supply)}
+                    </td>)
+                )}
               </tr>
             ))}
           </tbody>
@@ -144,7 +198,7 @@ export const Names = () => {
       <div className="grid grid-cols-3 w-4/5  gap-4 m-auto mt-3 p-2">
         <div className='my-auto'>
           <p className='text-xl'>
-            Página {currentPage} de {totalPages}
+            Page {currentPage} of {totalPages}
           </p>
         </div>
 
@@ -153,9 +207,9 @@ export const Names = () => {
             className="boton mx-2"
             onClick={handlePreviousPage}
           >
-            Anterior
+            Previous
           </button>
-          <div className="mx-3 flex my-auto">
+          <div className="mx-3 md:flex my-auto">
             {(currentPage - 1) === 0 ? (
               <button className="mx-6"></button>
             ) : (
@@ -174,7 +228,7 @@ export const Names = () => {
             className="boton mx-2"
             onClick={handleNextPage}
           >
-            Siguiente
+            Following
           </button>
         </div>
 
