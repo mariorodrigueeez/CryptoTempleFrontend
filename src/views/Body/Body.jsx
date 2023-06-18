@@ -63,7 +63,7 @@ const Body = () => {
             <p className='text-xl sm:text-2xl p-4 sm:p-8'>Check the latest news about cryptocurrency</p>
             <div className='flex justify-center mt-3'>
               <Link to="/news">
-                <button className='boton'>Noticias</button>
+                <button className='boton'>News</button>
               </Link>
             </div>
           </div>

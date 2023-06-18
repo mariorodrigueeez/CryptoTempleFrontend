@@ -77,7 +77,7 @@ export const Names = () => {
 
   const indexOfLastCoin = currentPage * coinsPerPage;
   const indexOfFirstCoin = indexOfLastCoin - coinsPerPage;
-  const currentCoins = allCoins.slice(indexOfFirstCoin, indexOfLastCoin);
+  const currentCoins = allCoins.length > 0 ? allCoins.slice(indexOfFirstCoin, indexOfLastCoin) : [];
 
   return (
     <div>
