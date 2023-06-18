@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
-  createHashRouter,
+  createBrowserRouter,
   RouterProvider,
 } from 'react-router-dom';
 import Root from './routes/root';
@@ -15,7 +15,7 @@ import Names from './views/Body/Components/Names';
 import { Login } from './views/Body/Components/Login/Login';
 
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <Root />,
