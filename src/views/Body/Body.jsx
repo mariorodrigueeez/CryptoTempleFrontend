@@ -92,7 +92,7 @@ const Body = () => {
 
       <div className='fondo-gris'>
         <div className='w-3/4 m-auto py-2 pt-8'>
-          <h2 className='text-center text-2xl sm:text-3xl p-4 sm:p-6 text-slate-600'>Made by Mario Rodríguez García - Tenorio</h2>
+          <h2 className='text-center text-2xl sm:text-3xl p-4 sm:p-6 text-slate-600'>Made by Mario Rodríguez</h2>
           <h2 className='text-center text-xl sm:text-2xl p-2 sm:p-1 text-slate-500'>Frontend developer</h2>
           <a href="https://github.com/mariorodrigueeez?tab=repositories" target="_blank" rel="noopener noreferrer">
             <img src={github} alt="logo" className='mt-4 m-auto h-12 sm:h-16 botonImg' />
