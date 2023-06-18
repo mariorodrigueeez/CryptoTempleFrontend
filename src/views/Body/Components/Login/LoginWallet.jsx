@@ -5,13 +5,13 @@ export const LoginWallet = () => {
   return <ConnectButton
     label="Connect your wallet"
     accountStatus={{
-      smallScreen: false,
-      largeScreen: 'address',
+      largeScreen: false,
+      smallScreen: 'address',
     }}
     showBalance={true}
     chainStatus={{
-      smallScreen: 'icon',
-      largeScreen: 'full',
+      smallScreen: 'full',
+      largeScreen: 'icon',
     }}
   />;
 };

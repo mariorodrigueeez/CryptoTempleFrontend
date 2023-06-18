@@ -90,7 +90,7 @@ export const Names = () => {
               <th scope="col" className="px-4 py-3">
                 Rank
               </th>
-              <th scope="col" className="py-3 bg-orange-400">
+              <th scope="col" className="py-3">
                 Name
               </th>
               <th scope="col" className="px-4 py-3">
@@ -125,12 +125,12 @@ export const Names = () => {
                 <th scope="row" className="px-4 py-4">
                   {coin.rank}
                 </th>
-                <th scope="row" className=" py-4  bg-orange-200">
+                <th scope="row" className=" py-4  ">
                   <div className='flex'>
-                    <div className='my-auto bg-blue-400  w-8'>
+                    <div className='flex-none m-auto   w-8'>
                       <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${coin.id}.png`} className='h-8 w-8' alt="logo" />
                     </div>
-                    <div className=' my-auto hidden lg:block bg-green-400 '>
+                    <div className='grow  my-auto hidden lg:block  w-20'>
                       {coin.nombre}
                     </div>
                   </div>
@@ -181,7 +181,7 @@ export const Names = () => {
                   {formatNum(coin.circulating_supply)}
                 </td>
                 {(coin.max_supply === null ? (
-                  <td className="px-4 py-4 ">
+                  <td className="px-4 py-4 w-20">
                     -
                   </td>)
                   : (
