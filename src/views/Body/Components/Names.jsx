@@ -12,7 +12,7 @@ export const Names = () => {
     getallData()
       .then((nombres) => {
         setAllCoins(nombres);
-        setTotalPages(Math.ceil(nombres.length / coinsPerPage));
+        setTotalPages(Math.ceil((nombres ?? []).length / coinsPerPage));
       })
       .catch((error) => {
         console.error(error);
